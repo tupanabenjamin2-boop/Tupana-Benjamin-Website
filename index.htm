@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Benjamin Tupana | Computer Science Portfolio</title>
+
+<style>
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f1e8;
+    color: #222;
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #171717, #781f24, #173e52);
+    color: white;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d5a33b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d5a33b;
+    border-bottom: 2px solid #d5a33b;
+}
+
+/* HOME */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 90px 8%;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h4 {
+    color: #d5a33b;
+    letter-spacing: 3px;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.hero-text h1 span {
+    color: #d5a33b;
+}
+
+.hero-text h3 {
+    color: #e5b6b6;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 380px;
+    object-fit: cover;
+    border: 6px solid #d5a33b;
+    border-radius: 15px 80px 15px 80px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    background: #a52a2a;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d5a33b;
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #a52a2a;
+}
+
+/* ABOUT */
+.about {
+    background: #f5f1e8;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-left: 6px solid #a52a2a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-content h3 {
+    color: #a52a2a;
+    margin-bottom: 15px;
+}
+
+/* SKILLS */
+.skills {
+    background: #e9e0d2;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.skill-card {
+    width: 280px;
+    padding: 30px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 5px solid #a52a2a;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.skill-card h3 {
+    color: #a52a2a;
+    margin-bottom: 10px;
+}
+
+/* PROJECTS */
+.projects {
+    background: #f5f1e8;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.project-card {
+    width: 300px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    border-top: 5px solid #d5a33b;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: #a52a2a;
+    margin-bottom: 15px;
+}
+
+.project-card h4 {
+    color: #244d63;
+    margin-top: 15px;
+}
+
+/* CONTACT */
+.contact {
+    background: #29231f;
+    color: white;
+}
+
+.contact-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+footer a {
+    color: #d5a33b;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media(max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 300px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER AND NAVIGATION -->
+<header id="home">
+
+<nav>
+    <h2 class="logo">BENJAMIN<span>.</span></h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME SECTION -->
+<div class="hero">
+
+    <div class="hero-text">
+
+        <h4>WELCOME TO MY PORTFOLIO</h4>
+
+        <h1>Hello, I'm <span>Benjamin Tupana</span></h1>
+
+        <h3>Computer Science Student</h3>
+
+        <p>
+            I am a passionate Computer Science student at
+            Zetech University seeking an internship opportunity
+            to develop my technical skills, gain practical
+            experience and contribute to a professional
+            working environment.
+        </p>
+
+        <a href="#contact" class="btn">Contact Me</a>
+
+        <a href="Benjamin-CV.txt" download class="btn">
+            Download CV
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="benjamin.jpg">
+    </div>
+
+</div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+<h2 class="section-title">About <span>Me</span></h2>
+
+<div class="about-content">
+
+    <h3>Who Am I?</h3>
+
+    <p>
+        My name is Benjamin Tupana, a student at Zetech
+        University pursuing a Diploma in Computer Science.
+
+        My course comprises web development, web designing,
+        computer management, networking configuration,
+        troubleshooting, application installation and
+        troubleshooting, and general computer maintenance.
+
+        I am looking for an internship opportunity at a
+        challenging institution where I can utilise my
+        acquired skills, gain first-hand experience and
+        learn within a real working environment.
+
+        I am hardworking, responsible and eager to grow
+        professionally in the Information Technology field.
+    </p>
+
+    <br>
+
+    <p><strong>Name:</strong> Benjamin Tupana</p>
+    <p><strong>Course:</strong> Diploma in Computer Science</p>
+    <p><strong>Institution:</strong> Zetech University</p>
+
+</div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section class="skills" id="skills">
+
+<h2 class="section-title">My <span>Skills</span></h2>
+
+<div class="skills-container">
+
+    <div class="skill-card">
+        <h3>HTML</h3>
+        <p>Creating and structuring professional web pages.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>CSS</h3>
+        <p>Website styling and responsive web design.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Python</h3>
+        <p>Programming and solving basic computer problems.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Database Management</h3>
+        <p>Managing and organising computer databases.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Networking</h3>
+        <p>Network configuration and troubleshooting.</p>
+    </div>
+
+    <div class="skill-card">
+        <h3>Computer Maintenance</h3>
+        <p>Software installation and computer support.</p>
+    </div>
+
+</div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+
+<h2 class="section-title">My <span>Projects</span></h2>
+
+<div class="projects-container">
+
+    <div class="project-card">
+
+        <h3>Personal Portfolio Website</h3>
+
+        <p>
+            A personal website designed to introduce myself,
+            display my technical skills and provide contact
+            information to potential employers.
+        </p>
+
+        <h4>Technologies Used:</h4>
+        <p>HTML and CSS</p>
+
+    </div>
+
+    <div class="project-card">
+
+        <h3>Student Records System</h3>
+
+        <p>
+            A proposed database project designed to store
+            and manage student information, registration
+            details and academic records.
+        </p>
+
+        <h4>Technologies Used:</h4>
+        <p>SQL and Database Management</p>
+
+    </div>
+
+    <div class="project-card">
+
+        <h3>Simple Calculator</h3>
+
+        <p>
+            A beginner programming project designed to
+            perform addition, subtraction, multiplication
+            and division.
+        </p>
+
+        <h4>Technologies Used:</h4>
+        <p>Python</p>
+
+    </div>
+
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact <span>Me</span></h2>
+
+<div class="contact-details">
+
+    <p><strong>Email:</strong> tupanabenjamin2@gmail.com</p>
+
+    <p><strong>Phone:</strong> 0722723458</p>
+
+    <p><strong>Institution:</strong> Zetech University</p>
+
+</div>
+
+<form action="mailto:tupanabenjamin2@gmail.com"
+      method="post" enctype="text/plain">
+
+    <input type="text" name="Name"
+           placeholder="Your Name" required>
+
+    <input type="email" name="Email"
+           placeholder="Your Email" required>
+
+    <textarea name="Message"
+              rows="6"
+              placeholder="Write your message..."
+              required></textarea>
+
+    <button type="submit" class="btn">
+        Send Message
+    </button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 Benjamin Tupana | Personal Portfolio Website</p>
+
+    <a href="#home">Back to Top ↑</a>
+
+</footer>
+
+</body>
+</html>
